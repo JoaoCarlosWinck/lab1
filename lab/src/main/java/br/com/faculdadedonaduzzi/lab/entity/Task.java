@@ -13,7 +13,7 @@ public class Task {
 
     private String titulo;
     private String descricao;
-    private String resposta;
+    private String prazo;
 
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
