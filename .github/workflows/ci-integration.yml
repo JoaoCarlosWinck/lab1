@@ -1,0 +1,29 @@
+# Aula 2: Integração Contínua
+name: CI Integration
+
+on:
+  push:
+    branches:
+      - feature/**
+  pull_request:
+    branches:
+      - feature/**
+
+
+jobs:
+  build_e_testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código fonte
+        uses: actions/checkout@v4
+
+      - name: Configurar o Java 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Compilar e Testar com Maven
+        run: mvn clean package

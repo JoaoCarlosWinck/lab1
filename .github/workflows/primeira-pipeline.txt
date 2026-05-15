@@ -1,3 +1,4 @@
+# Aula 1: Criando um pipeline de CI para o Kanban API
 name: Meu Primeiro Robô de CI
 
 # GATILHO (Quando esse robô deve acordar?)
