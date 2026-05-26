@@ -19,7 +19,7 @@ public class TarefaControllerTest {
     @Test
     public void testGetAllTasks() throws Exception {
         // O ERRO INTENCIONAL ESTÁ AQUI: Chamando "/tarefa" em vez de "/tarefas"
-        mockMvc.perform(get("/tarefas"))
+        mockMvc.perform(get("/tarefa"))
                 .andExpect(status().isOk());
     }
 }
