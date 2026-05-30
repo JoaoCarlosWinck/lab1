@@ -20,13 +20,13 @@ services:
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=admin_password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-    depends_on:
-      - postgresdb
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health" ]
       interval: 10s
       timeout: 5s
       retries: 3
       start_period: 20s
+    depends_on:
+      - postgresdb
 volumes:
   postgres-data:
