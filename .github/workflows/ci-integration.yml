@@ -31,3 +31,14 @@ jobs:
 
       - name: Compilar e Testar com Maven
         run: mvn clean package
+
+      - name: Compilar Código
+        run: mvn clean package -DskipTests
+
+      - name: Scan de Segurança no Código e Dependências (SCA)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs' # Analisa arquivos da pasta
+          ignore-unfixed: true
+          format: 'table'
+          severity: 'CRITICAL,HIGH'
