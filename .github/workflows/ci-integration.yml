@@ -6,6 +6,7 @@ on:
     branches:
       - develop
       - 'feature/**'
+      - master
   pull_request:
     branches:
       - develop
@@ -36,7 +37,7 @@ jobs:
         run: mvn clean package -DskipTests
 
       - name: Scan de Segurança no Código e Dependências (SCA)
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: 'fs' # Analisa arquivos da pasta
           ignore-unfixed: true
